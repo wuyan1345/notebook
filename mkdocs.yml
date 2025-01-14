@@ -1,5 +1,8 @@
 site_name: 晤言的屋檐
 site_url: https://test.example
+repo_name: WuYan/blog
+repo_url: https://github.com/wuyan1345/blog
+edit_uri: tree/master/docs
 theme:
   name: material
   font:
