@@ -3,12 +3,16 @@ site_url: https://test.example
 repo_name: WuYan/blog
 repo_url: https://github.com/wuyan1345/blog
 edit_uri: tree/master/docs
+nav:
+  - 前言: preface.md
+  - 后记: postscript.md
+  - 那些同在屋檐下避雨的人: friends.md
 theme:
   name: material
   font:
     text: Merriweather Sans
     code: Red Hat Mono
-  favicon: assets/test.gif
+  favicon: assets/title.gif
   logo: assets/roundicon.png
   features:
     - navigation.footer
