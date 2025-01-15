@@ -1,7 +1,4 @@
-# 前言
+# Welcome to my eave   (๑￫ܫ￩)
 
-- 外面的雨真大。 :cloud_rain:
-- 你也来我的屋檐下避一避雨吗？
-- 太好了，原来我建的这些屋子都这么有意义。 :star2:
-
-<img src="assets/preface.png" style="max-width: 80%; height: auto;">
+- 你好，我是WuYan，目前在浙江大学竺可桢学院修读人工智能专业。
+- 欢迎到我的屋檐下逛逛，说不定窗内有你想看的风景~
