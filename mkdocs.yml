@@ -16,10 +16,10 @@ theme:
   favicon: assets/title.gif
   logo: assets/roundicon.png
   features:
-    - navigation.footer
     - content.code.annotate
     - navigation.tracking
     - navigation.indexes
+    - navigation.top
   palette: 
     # Light Mode
     - scheme: default
@@ -38,9 +38,7 @@ theme:
       accent: deep purple
 
 extra_css:
-  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
-  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - css/fonts.css
   - css/custom.css
 
 markdown_extensions:
