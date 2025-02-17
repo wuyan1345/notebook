@@ -5,6 +5,9 @@ repo_url: https://github.com/wuyan1345/blog
 edit_uri: tree/master/docs
 nav:
   - 前言: preface.md
+  - 计算机系统Ⅲ:
+    - 计算机系统Ⅲ/index.md
+    - Page1: 计算机系统Ⅲ/class1.md
   - 后记: postscript.md
   - 那些同在屋檐下避雨的人: friends.md
 theme:
