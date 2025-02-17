@@ -1,15 +1,8 @@
 site_name: 晤言的屋檐
-site_url: https://test.example
+site_url: http://note.wuy4n.com
 repo_name: WuYan/blog
 repo_url: https://github.com/wuyan1345/blog
 edit_uri: tree/master/docs
-nav:
-  - 前言: preface.md
-  - 计算机系统Ⅲ:
-    - sys3/index.md
-    - Fundamentals of computer system: sys3/topic1.md
-  - 后记: postscript.md
-  - 那些同在屋檐下避雨的人: friends.md
 theme:
   name: material
   font: false
@@ -41,6 +34,9 @@ extra_css:
   - css/fonts.css
   - css/custom.css
 
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
@@ -57,5 +53,17 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - pymdownx.arithmatex
+
+nav:
+  - 前言: preface.md
+  - 计算机系统Ⅲ:
+    - sys3/index.md
+    - Fundamentals of computer system: sys3/topic1.md
+  - 正则表达式: others/topic1.md
+  - 后记: postscript.md
+  - 那些同在屋檐下避雨的人: friends.md
+
+not_in_nav: index.md
 
 copyright: Copyright &copy; 2024 WuYan
