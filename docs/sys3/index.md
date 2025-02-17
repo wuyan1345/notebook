@@ -1,9 +1,18 @@
 # 计算机系统Ⅲ
 
-### 主要内容
+!!! abstract
+    归档一下2025年学习的课程笔记
 
-![alt text](1.png)
+## 主要内容
++ Fundamental of computer system
++ ILP
++ Memory Hierarchy(Cache)
++ Memory Hierarchy(Main Memory)
++ File System
++ DLP and TLP
++ Summary
 
-### 评分要求
+## 评分要求
++ 据说六分的签到是白送但是有小测？🫠
 
-![alt text](2.png)
+<img src="1.png" style="max-width: 80%; height: auto;">
