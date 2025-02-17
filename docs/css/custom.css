@@ -1,0 +1,8 @@
+/* :root {
+    --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+    --md-code-font: "JetBrains Mono";
+} */
+
+body {
+    font-family: "LXGW WenKai Screen", sans-serif;
+}

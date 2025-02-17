@@ -6,19 +6,20 @@ edit_uri: tree/master/docs
 nav:
   - 前言: preface.md
   - 计算机系统Ⅲ:
-    - 计算机系统Ⅲ/index.md
-    - Page1: 计算机系统Ⅲ/class1.md
+    - sys3/index.md
+    - Fundamentals of computer system: sys3/topic1.md
   - 后记: postscript.md
   - 那些同在屋檐下避雨的人: friends.md
 theme:
   name: material
-  font:
-    text: Merriweather Sans
-    code: Red Hat Mono
+  font: false
   favicon: assets/title.gif
   logo: assets/roundicon.png
   features:
     - navigation.footer
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.indexes
   palette: 
     # Light Mode
     - scheme: default
@@ -35,6 +36,12 @@ theme:
         name: Dark mode
       primary: indigo
       accent: deep purple
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  # - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  # - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - /css/custom.css
 
 markdown_extensions:
   - attr_list
