@@ -1,3 +1,7 @@
+---
+count: true
+---
+
 # Fundamentals of computer system
 
 !!! tip

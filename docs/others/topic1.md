@@ -1,3 +1,7 @@
+---
+count: true
+---
+
 # 正则表达式
 
 !!! abstract

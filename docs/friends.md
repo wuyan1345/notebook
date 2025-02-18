@@ -62,7 +62,7 @@
                 <p>Only when the sky eclipse shall we unveil the starry night.</p>
             </div>
         </a>
-        <a class="link-block" href="https://dremig.top/">
+        <a class="link-block" href="https://note.dremig.space/">
             <img src="../assets/Dremig.jpg" alt="Dremig">
             <div class="link-content">
                 <strong>Dremig</strong>

@@ -5,6 +5,7 @@ repo_url: https://github.com/wuyan1345/blog
 edit_uri: tree/master/docs
 theme:
   name: material
+  custom_dir: overrides
   font: false
   favicon: assets/title.gif
   logo: assets/roundicon.png
@@ -54,12 +55,24 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.arithmatex
+  - md_in_html
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - statistics:
+      page_check_metadata: count
+
 
 nav:
   - 前言: preface.md
   - 计算机系统Ⅲ:
     - sys3/index.md
     - Fundamentals of computer system: sys3/topic1.md
+  - 数据库系统:
+    - database/index.md
+    - Introduction: database/topic1.md
   - 正则表达式: others/topic1.md
   - 后记: postscript.md
   - 那些同在屋檐下避雨的人: friends.md
