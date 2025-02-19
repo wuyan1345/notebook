@@ -161,3 +161,31 @@ count: true
         echo "aaabb(ab)bbcccc" | sed -E "s/b+\(ab\)/_/g"
         res: aaa_bbcccc
         ```
+
+## 相关应用
+
+### sed指令替换
++ sed指令有多种模式，这里只讨论`s/pattern/replace/flags`，即使用 pattern 扫描整个 string，将符合匹配的替换成 replace，flags 为修饰符。
+!!! tip 
+    + 笔者曾需要将 markdown 文件中复杂的图片名称重新命名，因此接触到了 sed 命令。在 markdown 文件中的图片引用主要有两种形式（以 png 图片为例，提取图片名后缀也可以用正则表达式）：
+        + `<img ... src="oldname.png" ...>`
+        + `![...](oldname.png)`
+        + 这其中省略部分都是要原样保留的，因此要使用小括号的捕获组特性进行保留。
+    + 需要将图片的`oldname`替换为`newname`。
+    + 正则表达式如下(因为bash会执行!所以也要转义)：
+
+        ```shell hl_lines="1 3" title="bash"
+        echo "<img alt='test' src='oldname.png' width=50px>" | sed -E "s/<img ([^>]*)src='[^\']*'([^>]*)>/<img \1src='newname.png'\2>/g"
+        res: <img alt='test' src='newname.png' width=50px>
+        echo "\![alt text](oldname.png)" | sed -E "s/\!\[([^]]*)\]\(oldname.png\)/\![\1](newname.png)/g"
+        res: ![alt text](newname.png)
+        ```
+
+### 其他
++ Python的re模块
+    + re.match(pattern, string, flags=0)：使用 pattern 从头匹配 string，flags 为修饰符。
+    + re.search(pattern, string, flags=0)：使用 pattern 扫描整个 string，返回第一个匹配的 re.Match。
+    + re.sub(pattern, repl, string, count=0, flags=0)：使用 pattern 扫描，将匹配串替换成repl。
+    + re.findall(pattern, string, flags=0)：在 string 中查找所有匹配 pattern 的结果，返回列表。
+    + re.compile(pattern, flags=0)：编译一个正则表达式，返回一个 re.Pattern。
++ php的`preg_match()`函数
