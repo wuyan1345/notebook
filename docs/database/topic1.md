@@ -22,7 +22,7 @@ count: true
         + Failures may leave database in an inconsistent state with partial updates carried out.
         + 比如从A银行转出50元到B银行，那么`从A银行账户扣除50元`与`给B银行账户充值50元`两件事必须要么同时发生，要么还没有发生，但是这是很难实现的。
     6. 并发访问异常
-        + Uncontrolled concurrrent accesses can lead to inconsistent.
+        + Uncontrolled concurrent accesses can lead to inconsistent.
     7. 安全性问题
 + 由此可见，DBMS应该满足如下特征：
     + 数据持久性
@@ -96,4 +96,4 @@ count: true
 + Evaluation
 
 ### Transaction management（事务管理）
-+ It ensures that the database remains in a consisitent state despite system failures and transaction failures.
++ It ensures that the database remains in a consistent state despite system failures and transaction failures.
