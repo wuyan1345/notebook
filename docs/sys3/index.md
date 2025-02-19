@@ -12,6 +12,9 @@
 + DLP and TLP
 + Summary
 
+## 实验安排
+<img src="2.png" style="max-width: 80%; height: auto;">
+
 ## 评分要求
 + 据说六分的签到是白送但是有小测？🫠
 
