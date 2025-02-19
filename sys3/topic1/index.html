@@ -384,6 +384,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算机系统架构的优化趋势
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能比较
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -581,6 +599,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算机系统架构的优化趋势
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能比较
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -602,7 +638,7 @@
 
 <h1 id="fundamentals-of-computer-system">Fundamentals of computer system</h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 181 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 383 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -622,6 +658,49 @@
 <li>我们对计算机系统的某一部分加速的时候，该加速部分对系统整体性能的影响取决于该部分的重要性和加速程度。</li>
 <li>记该部分的加速比为 Se ，该部分原本占整体处理时间的占比为 Fe ，则整体的加速比为
     $$ Sn = \frac{1}{(1-Fe)+\frac{Fe}{Se}} $$</li>
+</ul>
+</li>
+<li>Flynn分类法<ul>
+<li>Flynn分类法是一种广泛应用于并行计算机分类的方法。它根据指令流(Instruction Stream)和数据流(Data Stream)两个独立的维度进行分类，从而得出四种不同类型的计算机体系结构。</li>
+<li>四种类型为SISD/SIMD/MISD/MIMD。</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">计算机系统架构的优化趋势</h2>
+<ul>
+<li>Instruction-level parallelism(ILP)<ul>
+<li>Single processor performance improvement ended in 2003.</li>
+</ul>
+</li>
+<li>New models for performance:<ul>
+<li>Data-level parallelism(DLP)</li>
+<li>Thread-level parallelism(TLP)</li>
+<li>Request-level parallelism(RLP)</li>
+</ul>
+</li>
+<li>Multiprocessors<ul>
+<li>实现的难点：程序编写/加载平衡/同步与数据互通</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">性能比较</h2>
+<ul>
+<li>评判性能的对象<ul>
+<li>Algorithm</li>
+<li>Programming language, compiler, architecture</li>
+<li>Processor and memory system</li>
+<li>I/O system</li>
+</ul>
+</li>
+<li>规定 Performance = 1/Execution time</li>
+<li>CPU Clocking<ul>
+<li>Clock period: 时钟周期的长度</li>
+<li>Clock frequency/rate： 一秒钟内有多少个时钟周期</li>
+</ul>
+</li>
+<li>CPU Time = CPU Clock Cycles * Clock Cycle Time</li>
+<li>Average cycles per instruction(CPI)<ul>
+<li>CPU Time = Instruction count * CPI / Clock Rate</li>
 </ul>
 </li>
 </ul>
@@ -645,7 +724,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-18T13:10:48+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-19T09:03:18+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-19</span>
   </span>
 
     
