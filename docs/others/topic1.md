@@ -189,3 +189,23 @@ count: true
     + re.findall(pattern, string, flags=0)：在 string 中查找所有匹配 pattern 的结果，返回列表。
     + re.compile(pattern, flags=0)：编译一个正则表达式，返回一个 re.Pattern。
 + php的`preg_match()`函数
+    + preg_match(string \$pattern , string \$subject , array &\$matches = NULL)：使用 pattern 从头匹配 string , 捕获结果存储在 match。
+    + CTF 绕过检测的办法：PCRE回溯次数
+    !!! example 
+        如下代码检测了输入数据是否是php代码，若不是则写入文件。
+        ```php hl_lines="3"
+        <?php
+        function is_php($data){  
+            return preg_match('/<\?.*[(`;?>].*/is', $data);  
+        }
+
+        if(!is_php($input)) {
+            // fwrite($f, $input); ...
+        }
+        ```
+        常见的正则表达式引擎有两种类型，DFA（确定性有限状态自动机）与NFA（非确定性有限状态自动机）：
+
+        + DFA: 从起始状态开始，一个字符一个字符地读取输入串，并根据正则来一步步确定至下一个转移状态，直到匹配不上或走完整个输入。
+        + NFA：从起始状态开始，一个字符一个字符地读取输入串，并与正则表达式进行匹配，如果匹配不上，则进行回溯，尝试其他状态。
+
+        PHP使用的PCRE库用了NFA作为正则引擎，因此如果我们输入`<?php phpinfo();//aaaaa`，那么它会首先匹配`<?`，然后遇到了`.*`匹配到字符串末尾，但是因为还需要```[(`;?>]```，匹配失败进行回溯，吐出末尾最后一个`a`再检测，直到吐出末尾的`;`结束匹配。但是为了防止拒绝服务攻击，PHP设置了回溯次数上限，因此只要输入足够长的字符串超出回溯上限，该表达式就会返回false绕过匹配。

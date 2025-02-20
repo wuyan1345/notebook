@@ -85,6 +85,9 @@ nav:
   - 计算机系统Ⅲ:
     - sys3/index.md
     - Fundamentals of computer system: sys3/topic1.md
+  - 面向对象程序与设计:
+    - oop/index.md
+    - Introduction: oop/topic1.md
   - 数据库系统:
     - database/index.md
     - Introduction: database/topic1.md
