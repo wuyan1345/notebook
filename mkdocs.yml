@@ -34,9 +34,12 @@ theme:
 extra_css:
   - css/fonts.css
   - css/custom.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 markdown_extensions:
   - attr_list
@@ -54,7 +57,8 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - md_in_html
   - def_list
   - pymdownx.tasklist:
@@ -91,6 +95,8 @@ nav:
   - 数据库系统:
     - database/index.md
     - Introduction: database/topic1.md
+    - Intro to Relational Model: database/topic2.md
+    - Introduction to SQL: database/topic3.md
   - 正则表达式: others/topic1.md
   - 后记: postscript.md
   - 那些同在屋檐下避雨的人: friends.md
