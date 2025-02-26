@@ -89,6 +89,7 @@ nav:
   - 计算机系统Ⅲ:
     - sys3/index.md
     - Fundamentals of computer system: sys3/topic1.md
+    - Instruction-Level Parallelism: sys3/topic2.md
   - 面向对象程序与设计:
     - oop/index.md
     - Introduction: oop/topic1.md
