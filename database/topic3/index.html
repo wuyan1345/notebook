@@ -14,11 +14,11 @@
         <link rel="prev" href="../topic2/">
       
       
-        <link rel="next" href="../../others/topic1/">
+        <link rel="next" href="../topic4/">
       
       
       <link rel="icon" href="../../assets/title.gif">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -478,6 +478,8 @@
       
         
       
+        
+      
     
     
     
@@ -633,10 +635,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modification-of-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modification of the Database
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topic4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intermediate SQL
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -756,6 +789,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modification-of-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modification of the Database
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -777,7 +819,7 @@
 
 <h1 id="introduction-to-sql">Introduction to SQL</h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 170 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 19 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 527 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 60 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -841,8 +883,154 @@
 <li>将 instructor 表赋值给T和S表</li>
 <li>比较两表中的工资高低</li>
 <li>找出所有工资比某个 Computer 部门的讲师更高的讲师的姓名</li>
+<li>与下面的代码是等同的
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">where</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">some</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">salary</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">                    </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">                    </span><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Computer&quot;</span><span class="p">)</span>
+</span></code></pre></div></li>
 </ul>
 </details>
+<ul>
+<li>
+<p>字符串操作</p>
+<ul>
+<li><code>Intro%</code> 匹配任意以 Intro 开头的字符串。</li>
+<li><code>_</code>匹配任意一个字符，因此 <code>_%</code> 会匹配任意一个长度大于等于1的字符串。</li>
+</ul>
+</li>
+<li>
+<p>对结果排序 <code>order by</code></p>
+<ul>
+<li>
+<p>按照姓名降序排列，未指定顺序时默认为升序(asc)</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">name</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="hll"><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">desc</span>
+</span></span></code></pre></div>
+</li>
+<li>
+<p>可以指定多个排列顺序（即主顺序与次顺序）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>集合操作</p>
+<ul>
+<li>找到在2017年或2018年开课的课程 <code>A || B</code>:
+    <div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">select</span><span class="w"> </span><span class="n">course_id</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2017</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="hll"><span class="k">union</span>
+</span></span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">select</span><span class="w"> </span><span class="n">course_id</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2018</span>
+</span></code></pre></div></li>
+<li><code>A &amp;&amp; B</code>: 使用<code>intersect</code></li>
+<li><code>A &amp;&amp; not B</code>: 使用<code>except</code></li>
+</ul>
+</li>
+<li>
+<p>空值(Null Values)</p>
+<ul>
+<li>涉及空值的任何比较都返回 unknown</li>
+<li>在 where 语句里，unknown 会被视作 false</li>
+</ul>
+</li>
+<li>
+<p>计算数据特征</p>
+<ul>
+<li>可以使用如下函数 avg/min/max/sum/count，返回对一个多重数据的集合操作后得到的值。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<ul>
+<li>计算某个部门平均工资：
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="o">=</span><span class="ss">&quot;Comp%&quot;</span>
+</span></code></pre></div></li>
+<li>
+<p>使用 <code>group by</code> 语句进行分类：
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>使用 <code>having</code> 追加条件：
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_salary</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="hll"><span class="k">having</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42000</span>
+</span></span></code></pre></div></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>一些集合操作</p>
+<ul>
+<li>some<ul>
+<li><code>5 &lt; some (0,5,6)</code> 为真；</li>
+<li><code>5 = some (0,5,6)</code> 为真；</li>
+</ul>
+</li>
+<li>all</li>
+<li>exists</li>
+<li>unique</li>
+</ul>
+</li>
+<li>
+<p>with 语句</p>
+<ul>
+<li>find all departments with the maximum budget.
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="hll"><span class="k">with</span><span class="w"> </span><span class="n">max_budget</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
+</span></span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="hll"><span class="w">    </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">budget</span><span class="p">)</span>
+</span></span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="hll"><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">department</span><span class="p">)</span>
+</span></span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">select</span><span class="w"> </span><span class="n">department</span><span class="p">.</span><span class="n">name</span><span class="w"> </span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">from</span><span class="w"> </span><span class="n">department</span><span class="p">,</span><span class="n">max_budget</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">where</span><span class="w"> </span><span class="n">department</span><span class="p">.</span><span class="n">budget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_budget</span><span class="p">.</span><span class="n">value</span>
+</span></code></pre></div></li>
+<li>感觉相当于是在执行语句前建立一个新的临时表。</li>
+</ul>
+</li>
+</ul>
+<h2 id="modification-of-the-database">Modification of the Database</h2>
+<ul>
+<li>删除<ul>
+<li>删除部分数据
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">where</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">                </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="p">)</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>插入<ul>
+<li>插入数据指定列
+<div class="language-mysql highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span><span class="n">course_id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">dept_name</span><span class="p">,</span><span class="n">credits</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">,</span><span class="s1">&#39;...&#39;</span><span class="p">,</span><span class="s1">&#39;...&#39;</span><span class="p">,</span><span class="mi">114514</span><span class="p">)</span>
+</span></code></pre></div></li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">误区</p>
+<p><code>insert into table1 select * from table1</code>是错误的，因为 MYSQL 无法在不重复使用源数据的情况下同时进行读取和写入。</p>
+</div>
+</li>
+<li>更新<ul>
+<li>更新部分数据
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">update</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">set</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="o">*</span><span class="mi">1</span><span class="p">.</span><span class="mi">05</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">where</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">                </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="p">)</span>
+</span></code></pre></div></li>
+<li>使用 case 语句进行多条件判断：
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">update</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">set</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">case</span><span class="w"> </span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">            </span><span class="k">when</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">            </span><span class="k">then</span><span class="w"> </span><span class="n">salary</span><span class="o">*</span><span class="mi">1</span><span class="p">.</span><span class="mi">05</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">salary</span><span class="o">*</span><span class="mi">1</span><span class="p">.</span><span class="mi">03</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">            </span><span class="k">end</span>
+</span></code></pre></div></li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -863,7 +1051,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-25T08:52:32+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 5, 2025 07:37:03"><span class="timeago" datetime="2025-03-05T07:37:03+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 5, 2025 07:37:03">2025-03-05</span>
   </span>
 
     
@@ -923,7 +1111,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
