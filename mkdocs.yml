@@ -98,6 +98,7 @@ nav:
     - Introduction: database/topic1.md
     - Intro to Relational Model: database/topic2.md
     - Introduction to SQL: database/topic3.md
+    - Intermediate SQL: database/topic4.md
   - 正则表达式: others/topic1.md
   - 后记: postscript.md
   - 那些同在屋檐下避雨的人: friends.md

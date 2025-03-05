@@ -58,7 +58,7 @@ count: true
 + 去冗余(redundancy)优化
 
 ## 谬论(Fallacies)和陷阱(Pitfalls)
-??? danger "谬论"
+???+ danger "谬论"
     + 多处理器(Multiprocessors)是万金油。
     + 硬件优化既提升了性能又能提高能源效率（至少保证能量效率不变）
     + 基准值(benchmark)将无限期有效

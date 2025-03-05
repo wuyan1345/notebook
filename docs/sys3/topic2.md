@@ -35,6 +35,7 @@ count: true
     + Need to wait for previous instruction to complete its data read/write.
 + Control hazard
     + Deciding on control action depends on previous instruction.
++ 可以通过重新规划来避免冒险的问题。
 
 ## Branch Prediction
 + Predict outcome of branch
@@ -66,3 +67,5 @@ count: true
 ## Overlapping Execution
 + conflict in access memory
     + adding instruction buffer between memory and instruction decode unit
+
+## Dynamic Scheduling
