@@ -51,7 +51,7 @@ count: true
     + Hardware measures actual branch behavior
     + Assume future behavior will continue the trend 
     !!! note 
-        + use Branch Prediction buffer(aka branch history table)
+        + use Branch Prediction buffer(aka branch history table) + Branch-Target Buffers
         + 转换方式
 
             <img src="../4.png" style="max-width: 80%; height: auto;">
@@ -71,4 +71,6 @@ count: true
 ## Dynamic Scheduling
 + 流水线运行的弊端在于如果指令之间存在依赖，流水线就必须停止运行直到相关操作处理完成。
 + 实现动态规划，相当于将指令重新排列但不改变其功能以解决冒险。
-+ 将经典流水线的 ID 阶段拆分成
++ 将经典流水线的 ID 阶段拆分成 IS 和 RO 
+    + IS: Check structural hazards
+    + RO: Check data hazards
