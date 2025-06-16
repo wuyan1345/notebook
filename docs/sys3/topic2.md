@@ -31,7 +31,7 @@ count: true
 + 在流水线CPU中需要处理的冒险问题。
 + Structure hazards
     + A required resource is busy.
-+ Data hazard
++ Data hazard (RAW, WAR, WAW)
     + Need to wait for previous instruction to complete its data read/write.
 + Control hazard
     + Deciding on control action depends on previous instruction.
@@ -64,6 +64,12 @@ count: true
             + 相当于(-2,-1,1,2)四种程度，如果预判对了就加强判断，否则削减判断的力度。
         + n-Bit Predictor
 
++ Branch Target Buffer
+    + 记录分支指令的地址和目标地址
+    + 通过分支指令的地址来预测目标地址
+    + may solve the problem for 
+        + Even with predictor, still need to calculate the target address for 1-cycle penalty for a taken branch
+
 ## Overlapping Execution
 + conflict in access memory
     + adding instruction buffer between memory and instruction decode unit
@@ -73,4 +79,53 @@ count: true
 + 实现动态规划，相当于将指令重新排列但不改变其功能以解决冒险。
 + 将经典流水线的 ID 阶段拆分成 IS 和 RO 
     + IS: Check structural hazards
+        + 检查目标功能单元有无空位（如整数 ALU、浮点 ALU、加载/存储单元、分支单元）
     + RO: Check data hazards
++ Scoreboard algorithm
+    + 工作四个阶段
+        + Issue (IS)
+            + 如果功能单元无空位或者WAW就不发射
+        + Read Operands (RO)
+            + 如果有RAW就等待
+        + Execute
+        + Write Result
+            + 如果有WAR就等待
+    + 硬件三部分
+        + Instruction status
+        + Functional unit status
+            + Busy 部件是否忙碌
+            + Op 操作类型
+            + Fj, Fk 源寄存器地址
+            + Rj, Rk 源寄存器状态
+            + Qj, Qk 产生结果的功能单元
+        + Register result status
+    <img src="../6.png" style="max-width: 80%; height: auto;">
+
+    + In-order issue; out-of-order execute & commit
+    
++ Tomasulo's Approach
+    + It tracks when operands for instructions are available to minimize RAW hazards;
+    + It introduces register renaming in hardware to minimize WAW and WAR hazards.
+    + 三个阶段
+        + Issue
+            + 检查功能单元是否有空位
+            + 如果有空位则将指令放入功能单元并将寄存器重命名
+        + Execute
+            + 执行指令
+        + Write Result
+            + 将结果写回寄存器
+    <img src="../7.png" style="max-width: 80%; height: auto;">
+
++ Reorder Buffer
+    + in order commit
+    + 解决了Tomasulo's Approach中指令执行顺序和提交顺序不一致的问题
+    + Add a step: Commit—update register with reorder result
+
+## Achieve CPI < 1
+<img src="../8.png" style="max-width: 80%; height: auto;">
+
++ SuperScalar
+    + The number of instructions which are issued in each clock cycle is not fixed.
++ VLIW
+    + The number of instructions which are issued in each clock cycle is fixed (4-16), and these instructions constitute a long instruction or an instruction packet
++ Super Pipeline
